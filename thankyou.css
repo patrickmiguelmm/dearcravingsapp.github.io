@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+body {
+    font-family: 'Playfair Display', sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.thank-you-message {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}

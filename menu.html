@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Our Menu</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Add the provided CSS code here */
+    .menu-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .menu-item img {	
+      width: 200px; /* Adjust the width as needed */
+      height: auto;
+      margin-right: 10px;
+    }
+
+    .menu-item-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu-item h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .price-and-button {
+      display: flex;
+      flex-direction: column; /* Updated to column layout */
+      align-items: flex-start; /* Updated alignment */
+      margin-top: 10px; /* Updated margin-top */
+    }
+
+    .menu-item .price {
+      font-weight: bold;
+      margin-bottom: 10px; /* Added margin-bottom */
+    }
+
+    .menu-item button {
+      width: 120px;
+      border: 0;
+      padding: 10px 10px;
+      outline: none;
+      color: #fff;
+      background: linear-gradient(to right, #333, #333);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: width 0.5s;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .menu-item button img {
+      width: 30px;
+      display: none;
+    }
+
+    .menu-item button:hover img {
+      display: block;
+      margin-left: 5px;
+    }
+
+    .menu-item button:hover {
+      width: 140px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="Dear Cravings Logo"></a>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>        
+	  <li><a href="login.html">Log in</a></li>
+      <li><a href="signup.html">Sign up</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <!-- Content for the menu section -->
+    <h2>Our Menu</h2>
+    <div class="menu-item">
+      <img src="images/sharkfin.jpg" alt="Food Item 1">
+      <div class="menu-item-content">
+        <h3>Shark's Fin With Hainanase Rice</h3>
+        <div class="price-and-button">
+          <span class="price">&#8369;55.00</span>
+          <button type="button" onclick="createOrderPage('Shark\'s Fin With Hainanese Rice')">ORDER<img src="images/arrow.png"></button>
+        </div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="images/iced-mach.jpg" alt="Food Item 2">
+      <div class="menu-item-content">
+        <h3>Iced Macchiato</h3>
+        <div class="price-and-button">
+          <span class="price">&#8369;60.00 - Medium</span>
+          <button type="button" onclick="createOrderPage('Iced Macchiato (Medium)')">ORDER<img src="images/arrow.png"></button>
+          <span class="price">&#8369;80.00 - Large</span>
+          <button type="button" onclick="createOrderPage('Iced Macchiato (Large)')">ORDER<img src="images/arrow.png"></button>
+        </div>
+      </div>
+    </div>
+	<div class="menu-item">
+      <img src="images/mocha-frappe.jpg" alt="Food Item 3">
+      <div class="menu-item-content">
+        <h3>Mocha Frappe</h3>
+        <div class="price-and-button">
+          <span class="price">&#8369;60.00 - Medium</span>
+          <button type="button" onclick="createOrderPage('Mocha Frappe (Medium)')">ORDER<img src="images/arrow.png"></button>
+          <span class="price">&#8369;80.00 - Large</span>
+          <button type="button" onclick="createOrderPage('Mocha Frappe (Large)')">ORDER<img src="images/arrow.png"></button>
+        </div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="images/blackburger.jpg" alt="Food Item 4">
+      <div class="menu-item-content">
+        <h3>Black Burger</h3>
+        <div class="price-and-button">
+          <span class="price">&#8369;65.00 - Classic Craver's Burger</span>
+          <button type="button" onclick="createOrderPage('Black Burger - Classic Craver\'s Burger')">ORDER<img src="images/arrow.png"></button>
+          <span class="price">&#8369;75.00 - Craver's Eggs Benedict Burger</span>
+          <button type="button" onclick="createOrderPage('Black Burger - Craver\'s Eggs Benedict')">ORDER<img src="images/arrow.png"></button>
+        </div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="images/tacos.jpg" alt="Food Item 5">
+      <div class="menu-item-content">
+        <h3>Tacos</h3>
+        <div class="price-and-button">
+          <span class="price">&#8369;75.00</span>
+          <button type="button" onclick="createOrderPage('Tacos')">ORDER<img src="images/arrow.png"></button>
+        </div>
+      </div>
+    </div>    
+	<div class="menu-item">
+      <img src="images/buy-1-take-1-sndwch.jpg" alt="Food Item 6">
+      <div class="menu-item-content">
+        <h3>Buy 1 Take 1 Sandwich</h3>
+        <div class="price-and-button">
+          <span class="price">&#8369;99.00</span>
+          <button type="button" onclick="createOrderPage('Buy 1 Take 1 Sandwich')">ORDER<img src="images/arrow.png"></button>
+        </div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="images/chicken-karaage.jpg" alt="Food Item 7">
+      <div class="menu-item-content">
+        <h3>Chicken Karaage</h3>
+        <div class="price-and-button">
+          <span class="price">&#8369;100.00</span>
+          <button type="button" onclick="createOrderPage('Chicken Karaage')">ORDER<img src="images/arrow.png"></button>
+        </div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="images/nachos.jpg" alt="Food Item 8">
+      <div class="menu-item-content">
+        <h3>Nachos</h3>
+        <div class="price-and-button">
+          <span class="price">&#8369;100.00</span>
+          <button type="button" onclick="createOrderPage('Nachos')">ORDER<img src="images/arrow.png"></button>
+        </div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="images/chicken-tonkatsu.jpg" alt="Food Item 9">
+      <div class="menu-item-content">
+        <h3>Chicken Tonkatsu</h3>
+        <div class="price-and-button">
+          <span class="price">&#8369;100.00</span>
+          <button type="button" onclick="createOrderPage('Chicken Tonkatsu')">ORDER<img src="images/arrow.png"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="social-links">
+      <img src="images/fb.png">
+      <img src="images/tw.png">
+      <img src="images/ig.png">
+    </div>
+    <p>&copy; 2023 Dear Cravings. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function createOrderPage(productName) {
+      // Create a new webpage or redirect to a new URL with the product name as a parameter
+      window.location.href = "order.html?product=" + encodeURIComponent(productName);
+    }
+  </script>
+</body>
+</html>

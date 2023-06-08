@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Order Confirmation</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Customize the styles as needed for your order confirmation page */
+
+    /* Increase the font size and add some margin to the payment method label */
+    label[for="payment-method"] {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    /* Increase the font size and add some margin to the payment method select box */
+    #payment-method {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="Dear Cravings Logo"></a>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Log in</a></li>
+      <li><a href="signup.html">Sign up</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Order Confirmation</h1>
+  </header>
+
+  <main>
+    <h2>Order Details</h2>
+    <div id="order-details">
+      <h3>Product:</h3>
+      <p id="product-name"></p>
+    </div>
+
+    <h2>Customer Information</h2>
+    <form id="customer-info-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" required></textarea>
+
+      <!-- Add a payment method selection field -->
+      <label for="payment-method">Payment Method:</label>
+      <select id="payment-method" name="payment-method">
+        <option value="credit-card">Credit Card</option>
+        <option value="paypal">PayPal</option>
+      </select>
+
+      <br> <!-- Add a line break for spacing -->
+      <button type="submit">Submit Order & Pay</button>
+    </form>
+  </main>
+
+  <footer>    
+	<div class="social-links">
+      <img src="images/fb.png">
+      <img src="images/tw.png">
+      <img src="images/ig.png">
+    </div>
+    <p>&copy; 2023 Dear Cravings. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Retrieve the selected product name from the query parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const productName = urlParams.get('product');
+
+      // Update the product name in the order details section
+      const productNameElement = document.getElementById("product-name");
+      productNameElement.textContent = productName;
+    });
+
+    function handleSubmitOrder(event) {
+      event.preventDefault();
+
+      // Retrieve the selected product name from the query parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const productName = urlParams.get('product');
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const address = document.getElementById('address').value;
+      const paymentMethodElement = document.getElementById('payment-method');
+      const paymentMethod = paymentMethodElement.options[paymentMethodElement.selectedIndex].text;
+
+      const orderDetails = {
+        productName: productName,
+        customerName: name,
+        customerEmail: email,
+        customerAddress: address,
+        paymentMethod: paymentMethod,
+      };
+
+      // Display the order details
+      const orderDetailsContainer = document.getElementById('order-details');
+      orderDetailsContainer.innerHTML = `
+        <h3>Order Details</h3>
+        <p><strong>Product:</strong> ${orderDetails.productName}</p>
+        <p><strong>Name:</strong> ${orderDetails.customerName}</p>
+        <p><strong>Email:</strong> ${orderDetails.customerEmail}</p>
+        <p><strong>Address:</strong> ${orderDetails.customerAddress}</p>
+        <p><strong>Payment Method:</strong> ${orderDetails.paymentMethod}</p>
+      `;
+
+      // Simulated payment process
+      simulatePayment();
+
+      // Redirect to the thank you page after a brief delay
+      setTimeout(function() {
+        window.location.href = "thankyou.html";
+      }, 5000);
+    }
+
+    // Simulate a payment process by displaying a confirmation message
+    function simulatePayment() {
+      const paymentMessageContainer = document.createElement('div');
+      paymentMessageContainer.classList.add('payment-message');
+      paymentMessageContainer.innerHTML = `
+        <p>Payment processing...</p>
+        <p>Thank you for your payment!</p>
+      `;
+
+      document.body.appendChild(paymentMessageContainer);
+    }
+
+    const customerInfoForm = document.getElementById('customer-info-form');
+    customerInfoForm.addEventListener('submit', handleSubmitOrder);
+  </script>
+</body>
+</html>

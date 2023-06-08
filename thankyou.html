@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dear Cravings - Thank You</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dear Cravings - Thank You</h1>
+  <p>Your order has been placed successfully. Thank you for your purchase!</p>
+  <button class="button" onclick="redirectToHomePage()">Back to Home</button>
+
+  <script>
+    function redirectToHomePage() {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
